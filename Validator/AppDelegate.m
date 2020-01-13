@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ValidatedEmailAddress.h"
 
 @interface AppDelegate ()
 

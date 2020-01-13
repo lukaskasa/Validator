@@ -9,11 +9,16 @@
 /* Begin PBXBuildFile section */
 		801A3F9423C8C8BB00847790 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 801A3F9323C8C8BB00847790 /* AppDelegate.m */; };
 		801A3F9723C8C8BB00847790 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 801A3F9623C8C8BB00847790 /* SceneDelegate.m */; };
-		801A3F9A23C8C8BB00847790 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 801A3F9923C8C8BB00847790 /* ViewController.m */; };
+		801A3F9A23C8C8BB00847790 /* CheckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 801A3F9923C8C8BB00847790 /* CheckViewController.m */; };
 		801A3F9D23C8C8BB00847790 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 801A3F9B23C8C8BB00847790 /* Main.storyboard */; };
 		801A3F9F23C8C8BF00847790 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 801A3F9E23C8C8BF00847790 /* Assets.xcassets */; };
 		801A3FA223C8C8BF00847790 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 801A3FA023C8C8BF00847790 /* LaunchScreen.storyboard */; };
 		801A3FA523C8C8BF00847790 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 801A3FA423C8C8BF00847790 /* main.m */; };
+		8033028D23CA1020009EF0ED /* Varela Round regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8033028C23CA1020009EF0ED /* Varela Round regular.ttf */; };
+		80412E9723CA07A70012CEEA /* VerifiedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80412E9623CA07A70012CEEA /* VerifiedTableViewController.m */; };
+		80412E9B23CA08400012CEEA /* EmailAddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 80412E9A23CA08400012CEEA /* EmailAddressCell.m */; };
+		80A4CEB223CB2E3000D8E1EB /* ValidatedEmailAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A4CEB123CB2E3000D8E1EB /* ValidatedEmailAddress.m */; };
+		80A4CEB523CB3E0000D8E1EB /* ValidatorAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A4CEB423CB3E0000D8E1EB /* ValidatorAPIClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,13 +27,22 @@
 		801A3F9323C8C8BB00847790 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		801A3F9523C8C8BB00847790 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		801A3F9623C8C8BB00847790 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		801A3F9823C8C8BB00847790 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		801A3F9923C8C8BB00847790 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		801A3F9823C8C8BB00847790 /* CheckViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckViewController.h; sourceTree = "<group>"; };
+		801A3F9923C8C8BB00847790 /* CheckViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckViewController.m; sourceTree = "<group>"; };
 		801A3F9C23C8C8BB00847790 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		801A3F9E23C8C8BF00847790 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		801A3FA123C8C8BF00847790 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		801A3FA323C8C8BF00847790 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		801A3FA423C8C8BF00847790 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8033028C23CA1020009EF0ED /* Varela Round regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Varela Round regular.ttf"; sourceTree = "<group>"; };
+		80412E9523CA07A70012CEEA /* VerifiedTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerifiedTableViewController.h; sourceTree = "<group>"; };
+		80412E9623CA07A70012CEEA /* VerifiedTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerifiedTableViewController.m; sourceTree = "<group>"; };
+		80412E9923CA08400012CEEA /* EmailAddressCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmailAddressCell.h; sourceTree = "<group>"; };
+		80412E9A23CA08400012CEEA /* EmailAddressCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmailAddressCell.m; sourceTree = "<group>"; };
+		80A4CEB023CB2DF300D8E1EB /* ValidatedEmailAddress.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ValidatedEmailAddress.h; sourceTree = "<group>"; };
+		80A4CEB123CB2E3000D8E1EB /* ValidatedEmailAddress.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ValidatedEmailAddress.m; sourceTree = "<group>"; };
+		80A4CEB323CB32F200D8E1EB /* ValidatorAPIClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ValidatorAPIClient.h; sourceTree = "<group>"; };
+		80A4CEB423CB3E0000D8E1EB /* ValidatorAPIClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ValidatorAPIClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,19 +75,92 @@
 		801A3F9123C8C8BB00847790 /* Validator */ = {
 			isa = PBXGroup;
 			children = (
+				8033028E23CA15DB009EF0ED /* Helpers */,
+				80412E9823CA07B70012CEEA /* Models */,
+				80412E9423CA07530012CEEA /* Views */,
+				80412E9123CA071C0012CEEA /* Controllers */,
+				80412E9D23CA0BD50012CEEA /* Fonts */,
 				801A3F9223C8C8BB00847790 /* AppDelegate.h */,
 				801A3F9323C8C8BB00847790 /* AppDelegate.m */,
 				801A3F9523C8C8BB00847790 /* SceneDelegate.h */,
 				801A3F9623C8C8BB00847790 /* SceneDelegate.m */,
-				801A3F9823C8C8BB00847790 /* ViewController.h */,
-				801A3F9923C8C8BB00847790 /* ViewController.m */,
-				801A3F9B23C8C8BB00847790 /* Main.storyboard */,
 				801A3F9E23C8C8BF00847790 /* Assets.xcassets */,
-				801A3FA023C8C8BF00847790 /* LaunchScreen.storyboard */,
 				801A3FA323C8C8BF00847790 /* Info.plist */,
 				801A3FA423C8C8BF00847790 /* main.m */,
 			);
 			path = Validator;
+			sourceTree = "<group>";
+		};
+		8033028E23CA15DB009EF0ED /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				80A4CEB323CB32F200D8E1EB /* ValidatorAPIClient.h */,
+				80A4CEB423CB3E0000D8E1EB /* ValidatorAPIClient.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		80412E9123CA071C0012CEEA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				80412E9223CA07270012CEEA /* Headers */,
+				80412E9323CA072E0012CEEA /* Implementation */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		80412E9223CA07270012CEEA /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				801A3F9823C8C8BB00847790 /* CheckViewController.h */,
+				80412E9523CA07A70012CEEA /* VerifiedTableViewController.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		80412E9323CA072E0012CEEA /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				801A3F9923C8C8BB00847790 /* CheckViewController.m */,
+				80412E9623CA07A70012CEEA /* VerifiedTableViewController.m */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		80412E9423CA07530012CEEA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				80412E9C23CA08470012CEEA /* Cell */,
+				801A3FA023C8C8BF00847790 /* LaunchScreen.storyboard */,
+				801A3F9B23C8C8BB00847790 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		80412E9823CA07B70012CEEA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				80A4CEB023CB2DF300D8E1EB /* ValidatedEmailAddress.h */,
+				80A4CEB123CB2E3000D8E1EB /* ValidatedEmailAddress.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		80412E9C23CA08470012CEEA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				80412E9923CA08400012CEEA /* EmailAddressCell.h */,
+				80412E9A23CA08400012CEEA /* EmailAddressCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		80412E9D23CA0BD50012CEEA /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8033028C23CA1020009EF0ED /* Varela Round regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				801A3FA223C8C8BF00847790 /* LaunchScreen.storyboard in Resources */,
+				8033028D23CA1020009EF0ED /* Varela Round regular.ttf in Resources */,
 				801A3F9F23C8C8BF00847790 /* Assets.xcassets in Resources */,
 				801A3F9D23C8C8BB00847790 /* Main.storyboard in Resources */,
 			);
@@ -146,10 +234,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				801A3F9A23C8C8BB00847790 /* ViewController.m in Sources */,
+				80A4CEB223CB2E3000D8E1EB /* ValidatedEmailAddress.m in Sources */,
+				801A3F9A23C8C8BB00847790 /* CheckViewController.m in Sources */,
+				80412E9723CA07A70012CEEA /* VerifiedTableViewController.m in Sources */,
 				801A3F9423C8C8BB00847790 /* AppDelegate.m in Sources */,
 				801A3FA523C8C8BF00847790 /* main.m in Sources */,
 				801A3F9723C8C8BB00847790 /* SceneDelegate.m in Sources */,
+				80A4CEB523CB3E0000D8E1EB /* ValidatorAPIClient.m in Sources */,
+				80412E9B23CA08400012CEEA /* EmailAddressCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,7 +384,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 95K8REC8NW;
 				INFOPLIST_FILE = Validator/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,7 +402,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 95K8REC8NW;
 				INFOPLIST_FILE = Validator/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

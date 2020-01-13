@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ValidatorAPIClient.h"
 
-@interface ViewController : UIViewController
+@interface CheckViewController : UIViewController
 
+@property (nonatomic) ValidatorAPIClient * validatorApiClient;
 
 @end
 

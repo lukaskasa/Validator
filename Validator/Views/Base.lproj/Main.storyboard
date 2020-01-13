@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ube-er-BGA">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Varela Round regular.ttf">
+            <string>VarelaRound-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Check-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CheckViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="x8Z-cl-hoR">
+                                <rect key="frame" x="20" y="60.5" width="374" height="130"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="example@company.com" borderStyle="line" placeholder="example@company.com" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Ta-YR-T1n">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                        <color key="backgroundColor" red="0.074509803920000006" green="0.08235294118" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="n1F-gb-QjB"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.49019607840000001" green="0.89019607840000003" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" textContentType="email"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ioM-3N-jl6">
+                                        <rect key="frame" x="0.0" y="80" width="374" height="50"/>
+                                        <color key="backgroundColor" red="0.49019607840000001" green="0.89019607840000003" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="VuK-gH-jWt"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="17"/>
+                                        <state key="normal" title="Check">
+                                            <color key="titleColor" red="0.074509803920000006" green="0.08235294118" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="validateEmailAddress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uYO-tK-LKk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This E-mail address is valid and non dispasable!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BzH-Bh-3ZA">
+                                <rect key="frame" x="82" y="369.5" width="250" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="Zip-4b-CtG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter an address to be validated:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3rz-km-77t">
+                                <rect key="frame" x="20" y="20" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="kXL-iy-C66">
+                                <rect key="frame" x="138" y="220.5" width="138" height="99"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="rlI-7l-FSG">
+                                        <rect key="frame" x="0.0" y="0.0" width="138" height="25"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Disposable:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ya1-hp-zz0">
+                                                <rect key="frame" x="0.0" y="0.0" width="93" height="25"/>
+                                                <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="1zT-fE-v9C">
+                                                <rect key="frame" x="113" y="0.0" width="25" height="25"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="Tei-oD-uWI">
+                                        <rect key="frame" x="0.0" y="37" width="138" height="25"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MX:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fii-0R-FoY">
+                                                <rect key="frame" x="0.0" y="0.0" width="33" height="25"/>
+                                                <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="JFs-UF-tKU">
+                                                <rect key="frame" x="113" y="0.0" width="25" height="25"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="69" translatesAutoresizingMaskIntoConstraints="NO" id="I33-uW-K8P">
+                                        <rect key="frame" x="0.0" y="74" width="138" height="25"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alias:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0K-x2-QPD">
+                                                <rect key="frame" x="0.0" y="0.0" width="44" height="25"/>
+                                                <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="Cni-Qf-j5i">
+                                                <rect key="frame" x="113" y="0.0" width="25" height="25"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.98039215686274506" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="x8Z-cl-hoR" secondAttribute="trailing" constant="20" id="6Iz-k5-BzT"/>
+                            <constraint firstItem="3rz-km-77t" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="H2d-cc-oTM"/>
+                            <constraint firstItem="BzH-Bh-3ZA" firstAttribute="top" secondItem="kXL-iy-C66" secondAttribute="bottom" constant="50" id="Lk9-gJ-T8T"/>
+                            <constraint firstItem="x8Z-cl-hoR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Umb-5j-NIM"/>
+                            <constraint firstItem="kXL-iy-C66" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WzJ-1q-7Lv"/>
+                            <constraint firstItem="BzH-Bh-3ZA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bIv-vZ-C5y"/>
+                            <constraint firstItem="kXL-iy-C66" firstAttribute="top" secondItem="x8Z-cl-hoR" secondAttribute="bottom" constant="30" id="bU4-a0-dMW"/>
+                            <constraint firstItem="x8Z-cl-hoR" firstAttribute="top" secondItem="3rz-km-77t" secondAttribute="bottom" constant="20" id="esM-lZ-VFh"/>
+                            <constraint firstItem="3rz-km-77t" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="g3p-sA-Jkx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3rz-km-77t" secondAttribute="trailing" constant="20" id="yBk-wC-cct"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Check" largeTitleDisplayMode="never" id="ZAS-XG-fFM"/>
+                    <connections>
+                        <outlet property="aliasImageView" destination="Cni-Qf-j5i" id="sw4-Qe-S2t"/>
+                        <outlet property="aliasLabel" destination="N0K-x2-QPD" id="l4X-68-I0v"/>
+                        <outlet property="disposableImageView" destination="1zT-fE-v9C" id="3lN-TN-x3G"/>
+                        <outlet property="disposableLabel" destination="ya1-hp-zz0" id="oUU-KI-31l"/>
+                        <outlet property="emailAddressTextfield" destination="1Ta-YR-T1n" id="cdc-Bj-Vc1"/>
+                        <outlet property="messageTextLabel" destination="BzH-Bh-3ZA" id="ipT-6B-Tlh"/>
+                        <outlet property="mxImageView" destination="JFs-UF-tKU" id="rwf-gA-lsX"/>
+                        <outlet property="mxLabel" destination="Fii-0R-FoY" id="em7-Rs-Ytf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3907.2463768115945" y="-211.60714285714286"/>
+        </scene>
+        <!--Validated-->
+        <scene sceneID="qPl-U2-DLd">
+            <objects>
+                <tableViewController id="DTT-AO-1cO" customClass="VerifiedTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="75Q-pk-t7a">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="emailAddressCell" rowHeight="70" id="xhw-QJ-yT1" customClass="EmailAddressCell">
+                                <rect key="frame" x="0.0" y="28" width="414" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xhw-QJ-yT1" id="gdv-AH-0M2">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="TRF-hv-Bvs">
+                                            <rect key="frame" x="20" y="13" width="374" height="45.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lukas.kasakaitis@icloud.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0A-kO-Juf">
+                                                    <rect key="frame" x="0.0" y="0.0" width="227.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="aPo-0z-MqL">
+                                                    <rect key="frame" x="0.0" y="35.5" width="196.5" height="10"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Vsh-Q9-JOI">
+                                                            <rect key="frame" x="0.0" y="0.0" width="84.5" height="10"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Disposable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQQ-YM-b8N">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="57.5" height="10"/>
+                                                                    <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="11"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="hGV-2F-Tzr">
+                                                                    <rect key="frame" x="59.5" y="0.0" width="25" height="10"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="10" id="yK1-KF-HhI"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Lvn-xJ-1kx">
+                                                            <rect key="frame" x="91.5" y="0.0" width="45.5" height="10"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V4e-F4-ujO">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="18.5" height="10"/>
+                                                                    <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="11"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="bAG-VE-xsV">
+                                                                    <rect key="frame" x="20.5" y="0.0" width="25" height="10"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="10" id="ADy-2B-gRC"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Oj5-Qt-dEw">
+                                                            <rect key="frame" x="144" y="0.0" width="52.5" height="10"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alias" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDf-eq-rVf">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="25.5" height="10"/>
+                                                                    <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="11"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="MUJ-ly-uLd">
+                                                                    <rect key="frame" x="27.5" y="0.0" width="25" height="10"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="10" id="aJE-qC-nxx"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="TRF-hv-Bvs" firstAttribute="top" secondItem="gdv-AH-0M2" secondAttribute="top" constant="13" id="I1E-FP-ZbN"/>
+                                        <constraint firstItem="TRF-hv-Bvs" firstAttribute="leading" secondItem="gdv-AH-0M2" secondAttribute="leading" constant="20" symbolic="YES" id="j0i-C5-QMK"/>
+                                        <constraint firstAttribute="trailing" secondItem="TRF-hv-Bvs" secondAttribute="trailing" constant="20" id="oac-ue-xEe"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="DTT-AO-1cO" id="a62-XE-QoI"/>
+                            <outlet property="delegate" destination="DTT-AO-1cO" id="7s8-5C-dtq"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Validated" id="zGu-xT-333"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zJd-yU-CaE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3907.2463768115945" y="457.36607142857139"/>
+        </scene>
+        <!--Check-->
+        <scene sceneID="4FA-U2-8Yh">
+            <objects>
+                <tabBarController title="Check" automaticallyAdjustsScrollViewInsets="NO" definesPresentationContext="YES" providesPresentationContextTransitionStyle="YES" id="ube-er-BGA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Lu7-lN-y66">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.49019607843137253" green="0.8901960784313725" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.074509803921568626" green="0.082352941176470587" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.49019607840000001" green="0.89019607840000003" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Mgo-eK-MWZ" kind="relationship" relationship="viewControllers" id="mJG-Jg-D5j"/>
+                        <segue destination="BOD-nV-tVo" kind="relationship" relationship="viewControllers" id="JAa-62-GbO"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gW5-Bq-vSo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2086.9565217391305" y="122.54464285714285"/>
+        </scene>
+        <!--Check-->
+        <scene sceneID="uaz-wK-nwB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mgo-eK-MWZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Check" image="icon-check" selectedImage="icon-check" id="bCC-vz-RCs"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="ZC9-x0-v5i">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.074509803920000006" green="0.08235294118" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.49019607840000001" green="0.89019607840000003" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.49019607840000001" green="0.89019607840000003" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="XT1-5A-2v6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b7F-iA-6s7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2997.1014492753625" y="-211.60714285714286"/>
+        </scene>
+        <!--Validated-->
+        <scene sceneID="ETV-D4-GQp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BOD-nV-tVo" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Validated" image="icon-list" selectedImage="icon-list" id="f2h-uL-ePm"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="IRJ-qd-mUX">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.074509803920000006" green="0.066666666669999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.49019607840000001" green="0.89019607840000003" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.49019607840000001" green="0.89019607840000003" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DTT-AO-1cO" kind="relationship" relationship="rootViewController" id="VWN-zG-qgT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="24Z-oE-GLA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2997.1014492753625" y="457.36607142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon-check" width="48" height="32"/>
+        <image name="icon-checkmark" width="25" height="25"/>
+        <image name="icon-list" width="48" height="32"/>
+    </resources>
+</document>
