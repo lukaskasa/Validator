@@ -10,18 +10,14 @@
 
 @interface ValidatedEmailAddress : NSObject
 
-@property int status;
 @property NSString * emailAddress;
+@property NSString * user;
 @property NSString * domain;
-@property BOOL mx;
+@property NSString * status;
+@property NSString * reason;
 @property BOOL disposable;
-@property BOOL alias;
 
-- (instancetype) initWithStatus:(int)status emailAddress:(NSString *)emailAddress domain:(NSString *)domain mx:(BOOL)mx disposable:(BOOL)disposable alias:(BOOL)alias;
+- (instancetype) initWithEmail:(NSString *)emailAddress user:(NSString *)user domain:(NSString *)domain status:(NSString *)status reason:(NSString *)reason disposable:(BOOL)disposable;
 - (instancetype) initWithDictionary:(NSDictionary *)dictionary;
-
-//@property id * didYouMean;
-//@property NSInteger * remainingRequests;
-//@property NSString * error;
 
 @end

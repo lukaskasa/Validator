@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ube-er-BGA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ube-er-BGA">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,7 +15,7 @@
         <!--Check-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="CheckViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CheckViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="CheckViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,16 +23,34 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="x8Z-cl-hoR">
                                 <rect key="frame" x="20" y="60.5" width="374" height="130"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="example@company.com" borderStyle="line" placeholder="example@company.com" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Ta-YR-T1n">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ogq-7Q-lGa">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="example@company.com" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Ta-YR-T1n">
+                                                <rect key="frame" x="0.0" y="0.0" width="314" height="50"/>
+                                                <color key="backgroundColor" red="0.074509803920000006" green="0.08235294118" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="n1F-gb-QjB"/>
+                                                </constraints>
+                                                <color key="textColor" red="0.49019607840000001" green="0.89019607840000003" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" textContentType="email"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7hH-Cp-AO6">
+                                                <rect key="frame" x="324" y="0.0" width="50" height="50"/>
+                                                <color key="backgroundColor" red="0.074509803920000006" green="0.08235294118" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="Ywo-Lk-wIP"/>
+                                                </constraints>
+                                                <state key="normal" image="scan"/>
+                                                <connections>
+                                                    <action selector="scanForEmailAddress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qqa-zy-2Tr"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <color key="backgroundColor" red="0.074509803920000006" green="0.08235294118" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="n1F-gb-QjB"/>
-                                        </constraints>
-                                        <color key="textColor" red="0.49019607840000001" green="0.89019607840000003" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" textContentType="email"/>
-                                    </textField>
+                                        <color key="tintColor" red="1" green="0.98039215690000003" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ioM-3N-jl6">
                                         <rect key="frame" x="0.0" y="80" width="374" height="50"/>
                                         <color key="backgroundColor" red="0.49019607840000001" green="0.89019607840000003" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -133,15 +151,74 @@
                         <outlet property="aliasLabel" destination="N0K-x2-QPD" id="l4X-68-I0v"/>
                         <outlet property="disposableImageView" destination="1zT-fE-v9C" id="3lN-TN-x3G"/>
                         <outlet property="disposableLabel" destination="ya1-hp-zz0" id="oUU-KI-31l"/>
-                        <outlet property="emailAddressTextfield" destination="1Ta-YR-T1n" id="cdc-Bj-Vc1"/>
+                        <outlet property="emailAddressTextfield" destination="1Ta-YR-T1n" id="zQe-xv-6yK"/>
                         <outlet property="messageTextLabel" destination="BzH-Bh-3ZA" id="ipT-6B-Tlh"/>
                         <outlet property="mxImageView" destination="JFs-UF-tKU" id="rwf-gA-lsX"/>
                         <outlet property="mxLabel" destination="Fii-0R-FoY" id="em7-Rs-Ytf"/>
+                        <segue destination="mcj-kG-5qv" kind="presentation" identifier="showVisionViewController" id="ERN-uG-ND6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3907.2463768115945" y="-211.60714285714286"/>
+        </scene>
+        <!--Vision View Controller-->
+        <scene sceneID="fWr-kq-ruA">
+            <objects>
+                <viewController storyboardIdentifier="VisionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mcj-kG-5qv" customClass="VisionViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DeB-j9-cIK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zbV-U3-dCg" customClass="PreviewView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Hg-bY-HSp" userLabel="Cutout View">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="snU-Qr-Aof">
+                                        <rect key="frame" x="33.5" y="403" width="347.5" height="36.5"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="example@company.com">
+                                                <attributes>
+                                                    <font key="NSFont" size="30" name="VarelaRound-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="snU-Qr-Aof" firstAttribute="centerY" secondItem="6Hg-bY-HSp" secondAttribute="centerY" id="QDd-Yw-IYS"/>
+                                    <constraint firstItem="snU-Qr-Aof" firstAttribute="centerX" secondItem="6Hg-bY-HSp" secondAttribute="centerX" id="fIw-SY-awT"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Hg-bY-HSp" firstAttribute="centerX" secondItem="DeB-j9-cIK" secondAttribute="centerX" id="3YO-9h-rQo"/>
+                            <constraint firstItem="zbV-U3-dCg" firstAttribute="leading" secondItem="h7N-bp-NcG" secondAttribute="leading" id="7Lg-kz-LUx"/>
+                            <constraint firstItem="h7N-bp-NcG" firstAttribute="trailing" secondItem="zbV-U3-dCg" secondAttribute="trailing" id="EFh-UB-3nJ"/>
+                            <constraint firstItem="6Hg-bY-HSp" firstAttribute="trailing" secondItem="DeB-j9-cIK" secondAttribute="trailing" id="NvE-yb-3nG"/>
+                            <constraint firstItem="6Hg-bY-HSp" firstAttribute="centerY" secondItem="DeB-j9-cIK" secondAttribute="centerY" id="WIr-fo-Wto"/>
+                            <constraint firstAttribute="bottom" secondItem="6Hg-bY-HSp" secondAttribute="bottom" id="db0-1h-pl2"/>
+                            <constraint firstItem="zbV-U3-dCg" firstAttribute="top" secondItem="h7N-bp-NcG" secondAttribute="top" id="gT7-Vu-fSd"/>
+                            <constraint firstItem="h7N-bp-NcG" firstAttribute="bottom" secondItem="zbV-U3-dCg" secondAttribute="bottom" id="pkc-sc-1kb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="h7N-bp-NcG"/>
+                    </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="snU-Qr-Aof" id="nmN-p4-oK8"/>
+                        <outlet property="cutoutView" destination="6Hg-bY-HSp" id="d3E-wt-l35"/>
+                        <outlet property="previewView" destination="zbV-U3-dCg" id="vZ1-AV-VkH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WGZ-O9-nBv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4798.5507246376819" y="-212.27678571428569"/>
         </scene>
         <!--Validated-->
         <scene sceneID="qPl-U2-DLd">
@@ -326,5 +403,6 @@
         <image name="icon-check" width="48" height="32"/>
         <image name="icon-checkmark" width="25" height="25"/>
         <image name="icon-list" width="48" height="32"/>
+        <image name="scan" width="21" height="28"/>
     </resources>
 </document>

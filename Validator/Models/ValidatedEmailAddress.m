@@ -10,33 +10,38 @@
 
 @implementation ValidatedEmailAddress
 
-- (instancetype) initWithStatus:(int)status emailAddress:(NSString *)emailAddress domain:(NSString *)domain mx:(BOOL)mx disposable:(BOOL)disposable alias:(BOOL)alias {
-    if (self = [super init]) {
-        _status = status;
+- (instancetype) initWithEmail:(NSString *)emailAddress user:(NSString *)user domain:(NSString *)domain status:(NSString *)status reason:(NSString *)reason disposable:(BOOL)disposable; {
+    
+    self =  [super init];
+    
+    if (self) {
         _emailAddress = emailAddress;
+        _user = user;
         _domain = domain;
-        _mx = mx;
+        _status = status;
+        _reason = reason;
         _disposable = disposable;
-        _alias = alias;
     }
+    
     return self;
 }
 
 - (instancetype) initWithDictionary:(NSDictionary *)dictionary {
-    int status = [dictionary[@"status"] intValue];
     NSString * emailAddress = dictionary[@"email"];
+    NSString * user = dictionary[@"user"];
     NSString * domain = dictionary[@"domain"];
+    NSString * status = dictionary[@"status"];
+    NSString * reason = dictionary[@"reason"];
     
-    BOOL mx = [[dictionary objectForKey:@"mx"] integerValue] == 1 ? YES : NO;
     BOOL disposable = [[dictionary objectForKey:@"disposable"] integerValue]  == 1 ? YES : NO;
-    BOOL alias = [[dictionary objectForKey:@"alias"] integerValue] == 1 ? YES : NO;
     
-    return [self initWithStatus:status
-            emailAddress:emailAddress
-                     domain:domain
-                             mx:mx
-                     disposable:disposable
-                          alias:alias];
+    return [self initWithEmail:emailAddress
+                          user:user
+                        domain:domain
+                        status:status
+                        reason:reason
+                    disposable:disposable
+            ];
 }
 
 @end

@@ -14,7 +14,5 @@
 @property (nonatomic) ValidatedEmailAddress * validatedEmailAddress;
 
 - (void)validateEmailAddress:(NSString *)email completion:(void (^)(NSError *error))completion;
-//- (void) queryResponseForURL: (NSURL *)inURL;
-//- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response;
 
 @end

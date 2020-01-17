@@ -17,8 +17,12 @@
 		8033028D23CA1020009EF0ED /* Varela Round regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8033028C23CA1020009EF0ED /* Varela Round regular.ttf */; };
 		80412E9723CA07A70012CEEA /* VerifiedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80412E9623CA07A70012CEEA /* VerifiedTableViewController.m */; };
 		80412E9B23CA08400012CEEA /* EmailAddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 80412E9A23CA08400012CEEA /* EmailAddressCell.m */; };
+		8070075123D06EAE0068C8AE /* VisionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8070075023D06EAE0068C8AE /* VisionViewController.m */; };
+		8070075423D0FD610068C8AE /* PreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8070075323D0FD610068C8AE /* PreviewView.m */; };
 		80A4CEB223CB2E3000D8E1EB /* ValidatedEmailAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A4CEB123CB2E3000D8E1EB /* ValidatedEmailAddress.m */; };
 		80A4CEB523CB3E0000D8E1EB /* ValidatorAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A4CEB423CB3E0000D8E1EB /* ValidatorAPIClient.m */; };
+		80E1322723CE228100938893 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E1322623CE228100938893 /* Constants.m */; };
+		80E1323423CE42B600938893 /* Validator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80E1323223CE42B600938893 /* Validator.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,10 +43,17 @@
 		80412E9623CA07A70012CEEA /* VerifiedTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerifiedTableViewController.m; sourceTree = "<group>"; };
 		80412E9923CA08400012CEEA /* EmailAddressCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmailAddressCell.h; sourceTree = "<group>"; };
 		80412E9A23CA08400012CEEA /* EmailAddressCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmailAddressCell.m; sourceTree = "<group>"; };
+		8070074F23D06EAE0068C8AE /* VisionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VisionViewController.h; sourceTree = "<group>"; };
+		8070075023D06EAE0068C8AE /* VisionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VisionViewController.m; sourceTree = "<group>"; };
+		8070075223D0FD610068C8AE /* PreviewView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreviewView.h; sourceTree = "<group>"; };
+		8070075323D0FD610068C8AE /* PreviewView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreviewView.m; sourceTree = "<group>"; };
 		80A4CEB023CB2DF300D8E1EB /* ValidatedEmailAddress.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ValidatedEmailAddress.h; sourceTree = "<group>"; };
 		80A4CEB123CB2E3000D8E1EB /* ValidatedEmailAddress.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ValidatedEmailAddress.m; sourceTree = "<group>"; };
 		80A4CEB323CB32F200D8E1EB /* ValidatorAPIClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ValidatorAPIClient.h; sourceTree = "<group>"; };
 		80A4CEB423CB3E0000D8E1EB /* ValidatorAPIClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ValidatorAPIClient.m; sourceTree = "<group>"; };
+		80E1322523CE201E00938893 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		80E1322623CE228100938893 /* Constants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		80E1323323CE42B600938893 /* Validator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Validator.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +105,8 @@
 		8033028E23CA15DB009EF0ED /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				80E1322523CE201E00938893 /* Constants.h */,
+				80E1322623CE228100938893 /* Constants.m */,
 				80A4CEB323CB32F200D8E1EB /* ValidatorAPIClient.h */,
 				80A4CEB423CB3E0000D8E1EB /* ValidatorAPIClient.m */,
 			);
@@ -114,6 +127,7 @@
 			children = (
 				801A3F9823C8C8BB00847790 /* CheckViewController.h */,
 				80412E9523CA07A70012CEEA /* VerifiedTableViewController.h */,
+				8070074F23D06EAE0068C8AE /* VisionViewController.h */,
 			);
 			path = Headers;
 			sourceTree = "<group>";
@@ -123,6 +137,7 @@
 			children = (
 				801A3F9923C8C8BB00847790 /* CheckViewController.m */,
 				80412E9623CA07A70012CEEA /* VerifiedTableViewController.m */,
+				8070075023D06EAE0068C8AE /* VisionViewController.m */,
 			);
 			path = Implementation;
 			sourceTree = "<group>";
@@ -133,6 +148,8 @@
 				80412E9C23CA08470012CEEA /* Cell */,
 				801A3FA023C8C8BF00847790 /* LaunchScreen.storyboard */,
 				801A3F9B23C8C8BB00847790 /* Main.storyboard */,
+				8070075223D0FD610068C8AE /* PreviewView.h */,
+				8070075323D0FD610068C8AE /* PreviewView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -142,6 +159,7 @@
 			children = (
 				80A4CEB023CB2DF300D8E1EB /* ValidatedEmailAddress.h */,
 				80A4CEB123CB2E3000D8E1EB /* ValidatedEmailAddress.m */,
+				80E1323223CE42B600938893 /* Validator.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -194,6 +212,7 @@
 				TargetAttributes = {
 					801A3F8E23C8C8BB00847790 = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -235,13 +254,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				80A4CEB223CB2E3000D8E1EB /* ValidatedEmailAddress.m in Sources */,
+				8070075423D0FD610068C8AE /* PreviewView.m in Sources */,
 				801A3F9A23C8C8BB00847790 /* CheckViewController.m in Sources */,
 				80412E9723CA07A70012CEEA /* VerifiedTableViewController.m in Sources */,
 				801A3F9423C8C8BB00847790 /* AppDelegate.m in Sources */,
+				8070075123D06EAE0068C8AE /* VisionViewController.m in Sources */,
 				801A3FA523C8C8BF00847790 /* main.m in Sources */,
+				80E1323423CE42B600938893 /* Validator.xcdatamodeld in Sources */,
 				801A3F9723C8C8BB00847790 /* SceneDelegate.m in Sources */,
 				80A4CEB523CB3E0000D8E1EB /* ValidatorAPIClient.m in Sources */,
 				80412E9B23CA08400012CEEA /* EmailAddressCell.m in Sources */,
+				80E1322723CE228100938893 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,7 +340,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -369,7 +392,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -381,6 +404,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 95K8REC8NW;
 				INFOPLIST_FILE = Validator/Info.plist;
@@ -391,6 +415,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lukaskasakaitis.Validator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -399,6 +425,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 95K8REC8NW;
 				INFOPLIST_FILE = Validator/Info.plist;
@@ -409,6 +436,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lukaskasakaitis.Validator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -435,6 +463,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		80E1323223CE42B600938893 /* Validator.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				80E1323323CE42B600938893 /* Validator.xcdatamodel */,
+			);
+			currentVersion = 80E1323323CE42B600938893 /* Validator.xcdatamodel */;
+			path = Validator.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 801A3F8723C8C8BB00847790 /* Project object */;
 }

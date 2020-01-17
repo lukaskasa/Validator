@@ -7,6 +7,7 @@
 //
 
 #import "ValidatorAPIClient.h"
+#import "Constants.h"
 
 @interface ValidatorAPIClient()
 
@@ -16,7 +17,7 @@
 
 @implementation ValidatorAPIClient
 
-static NSString *const baseURLString = @"https://www.validator.pizza/email/";
+static NSString *const baseURLString = @"https://email-checker.p.rapidapi.com/verify/v1";
 
 - (ValidatedEmailAddress *)validatedEmailAddress {
     return self.internalValidatedEmailAddress;
@@ -33,15 +34,26 @@ static NSString *const baseURLString = @"https://www.validator.pizza/email/";
 
 - (void)validateEmailAddress:(NSString *)email completion:(void (^)(NSError *error))completion {
     
-    // 1. Check Domain
+    NSDictionary *headers = @{@"x-rapidapi-host": @"email-checker.p.rapidapi.com", @"x-rapidapi-key": apiKey};
     
-    NSString *urlWithAddress = [NSString stringWithFormat:@"%@%@", baseURLString, email];
+    NSURLComponents *requestUrl = [[NSURLComponents alloc] initWithString:baseURLString];
+    [requestUrl setQuery: [NSString stringWithFormat:@"email=%@", email]];
     
-    NSURL *requestUrl = [NSURL URLWithString:urlWithAddress];
+    NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL: [requestUrl URL]
+                                                        cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                        timeoutInterval:10.0];
     
-    NSURLSessionDataTask *dataTask = [NSURLSession.sharedSession dataTaskWithURL:requestUrl completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    [request setHTTPMethod:@"GET"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setAllHTTPHeaderFields:headers];
+
+    NSURLSessionDataTask *apiCallDataTask = [NSURLSession.sharedSession dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
         /// Test if domain is valid
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+        NSLog(@"%@", httpResponse);
+        
+        
         
         if (error) {
             completion(error);
@@ -63,36 +75,12 @@ static NSString *const baseURLString = @"https://www.validator.pizza/email/";
         
         ValidatedEmailAddress *validatedAddress = [[ValidatedEmailAddress alloc] initWithDictionary:json];
         
-        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-        
-        NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:nil delegateQueue:nil];
-        
-        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: [NSURL URLWithString:[NSString stringWithFormat:@"https://%@", validatedAddress.domain]]
-                                                               cachePolicy:NSURLRequestUseProtocolCachePolicy
-                                                           timeoutInterval:60.0];
-        
-        [request setHTTPMethod:@"GET"];
-        
-        NSURLSessionDataTask *postDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-            
-            NSUInteger respCode=[(NSHTTPURLResponse  *)response statusCode];
-            
-            if ( !error&&respCode == 200 ) {
-                self.internalValidatedEmailAddress = validatedAddress;
-                completion(nil);
-            } else {
-                ValidatedEmailAddress * address = [[ValidatedEmailAddress alloc] initWithStatus:(int)respCode emailAddress:nil domain:nil mx:nil disposable:nil alias:nil];
-                self.internalValidatedEmailAddress = address;
-                completion(nil);
-            }
-            
-        }];
-        
-        [postDataTask resume];
+        self.internalValidatedEmailAddress = validatedAddress;
+        completion(nil);
         
     }];
     
-    [dataTask resume];
+    [apiCallDataTask resume];
 }
 
 

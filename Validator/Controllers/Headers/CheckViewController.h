@@ -7,11 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VisionViewController.h"
 #import "ValidatorAPIClient.h"
+#import <AVFoundation/AVFoundation.h>
 
-@interface CheckViewController : UIViewController
+@protocol ResultReceiver <NSObject>
+@required
+- (void)passResult:(NSString *)result;
+@end
 
+@interface CheckViewController : UIViewController <ResultReceiver>
 @property (nonatomic) ValidatorAPIClient * validatorApiClient;
+@property (nonatomic) AVCaptureSession *captureSession;
 
 @end
+
+
 
