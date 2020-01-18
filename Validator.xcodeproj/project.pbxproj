@@ -43,6 +43,9 @@
 		80412E9623CA07A70012CEEA /* VerifiedTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerifiedTableViewController.m; sourceTree = "<group>"; };
 		80412E9923CA08400012CEEA /* EmailAddressCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmailAddressCell.h; sourceTree = "<group>"; };
 		80412E9A23CA08400012CEEA /* EmailAddressCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmailAddressCell.m; sourceTree = "<group>"; };
+		804EBDCD23D30A1B00AC9965 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		804EBDCE23D30A6C00AC9965 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		804EBDCF23D30A6C00AC9965 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		8070074F23D06EAE0068C8AE /* VisionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VisionViewController.h; sourceTree = "<group>"; };
 		8070075023D06EAE0068C8AE /* VisionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VisionViewController.m; sourceTree = "<group>"; };
 		8070075223D0FD610068C8AE /* PreviewView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreviewView.h; sourceTree = "<group>"; };
@@ -223,6 +226,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 801A3F8623C8C8BB00847790;
 			productRefGroup = 801A3F9023C8C8BB00847790 /* Products */;
@@ -275,6 +279,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				801A3F9C23C8C8BB00847790 /* Base */,
+				804EBDCD23D30A1B00AC9965 /* en */,
+				804EBDCF23D30A6C00AC9965 /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -283,6 +289,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				801A3FA123C8C8BF00847790 /* Base */,
+				804EBDCE23D30A6C00AC9965 /* de */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -294,6 +301,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -352,6 +360,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

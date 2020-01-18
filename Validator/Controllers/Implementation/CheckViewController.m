@@ -113,7 +113,6 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if ([[segue identifier] isEqualToString:@"showVisionViewController"]) {
-        NSLog(@"Setting Delegate.");
         VisionViewController * visionViewController = [segue destinationViewController];
         visionViewController.resultReceiverDelegate = self;
     }
@@ -128,7 +127,7 @@
     [self.view endEditing:YES];
 }
 
--(void)setImageViews:(ValidatedEmailAddress *)validatedAddress {
+- (void)setImageViews:(ValidatedEmailAddress *)validatedAddress {
     
     UIImage * checkImage = [[UIImage imageNamed:@"icon-checkmark"] init];
     UIImage * crossImage = [[UIImage imageNamed:@"icon-cross"] init];

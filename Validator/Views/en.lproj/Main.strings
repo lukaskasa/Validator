@@ -1,0 +1,48 @@
+
+/* Class = "UITextField"; placeholder = "example@company.com"; ObjectID = "1Ta-YR-T1n"; */
+"1Ta-YR-T1n.placeholder" = "example@company.com";
+
+/* Class = "UILabel"; text = "Enter an address to be validated:"; ObjectID = "3rz-km-77t"; */
+"3rz-km-77t.text" = "Enter an address to be validated:";
+
+/* Class = "UILabel"; text = "This E-mail address is valid and non dispasable!"; ObjectID = "BzH-Bh-3ZA"; */
+"BzH-Bh-3ZA.text" = "This E-mail address is valid and non dispasable!";
+
+/* Class = "UILabel"; text = "MX:"; ObjectID = "Fii-0R-FoY"; */
+"Fii-0R-FoY.text" = "MX:";
+
+/* Class = "UILabel"; text = "Alias"; ObjectID = "MDf-eq-rVf"; */
+"MDf-eq-rVf.text" = "Alias";
+
+/* Class = "UILabel"; text = "Alias:"; ObjectID = "N0K-x2-QPD"; */
+"N0K-x2-QPD.text" = "Alias:";
+
+/* Class = "UILabel"; text = "MX"; ObjectID = "V4e-F4-ujO"; */
+"V4e-F4-ujO.text" = "MX";
+
+/* Class = "UINavigationItem"; title = "Check"; ObjectID = "ZAS-XG-fFM"; */
+"ZAS-XG-fFM.title" = "Check";
+
+/* Class = "UITabBarItem"; title = "Check"; ObjectID = "bCC-vz-RCs"; */
+"bCC-vz-RCs.title" = "Check";
+
+/* Class = "UITabBarItem"; title = "Checked"; ObjectID = "f2h-uL-ePm"; */
+"f2h-uL-ePm.title" = "Checked";
+
+/* Class = "UIButton"; normalTitle = "Check"; ObjectID = "ioM-3N-jl6"; */
+"ioM-3N-jl6.normalTitle" = "Check";
+
+/* Class = "UILabel"; text = "lukas.kasakaitis@icloud.com"; ObjectID = "q0A-kO-Juf"; */
+"q0A-kO-Juf.text" = "lukas.kasakaitis@icloud.com";
+
+/* Class = "UILabel"; text = "Disposable"; ObjectID = "sQQ-YM-b8N"; */
+"sQQ-YM-b8N.text" = "Disposable";
+
+/* Class = "UITabBarController"; title = "Check"; ObjectID = "ube-er-BGA"; */
+"ube-er-BGA.title" = "Check";
+
+/* Class = "UILabel"; text = "Disposable:"; ObjectID = "ya1-hp-zz0"; */
+"ya1-hp-zz0.text" = "Disposable:";
+
+/* Class = "UINavigationItem"; title = "Validated"; ObjectID = "zGu-xT-333"; */
+"zGu-xT-333.title" = "Validated";
