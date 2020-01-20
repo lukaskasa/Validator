@@ -11,8 +11,10 @@
 
 @interface ValidatorAPIClient : NSObject
 
+// Properties
 @property (nonatomic) ValidatedEmailAddress * validatedEmailAddress;
 
+// Methods
 - (void)validateEmailAddress:(NSString *)email completion:(void (^)(NSError *error))completion;
 
 @end

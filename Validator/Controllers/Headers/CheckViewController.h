@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
+#import <CoreData/CoreData.h>
+#import "AppDelegate.h"
+#import "EmailAddressMO.h"
 #import "VisionViewController.h"
 #import "ValidatorAPIClient.h"
-#import <AVFoundation/AVFoundation.h>
 
 @protocol ResultReceiver <NSObject>
 @required
@@ -17,6 +20,8 @@
 @end
 
 @interface CheckViewController : UIViewController <ResultReceiver>
+
+// Properties
 @property (nonatomic) ValidatorAPIClient * validatorApiClient;
 @property (nonatomic) AVCaptureSession *captureSession;
 

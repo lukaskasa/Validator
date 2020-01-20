@@ -17,11 +17,11 @@
 		8033028D23CA1020009EF0ED /* Varela Round regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8033028C23CA1020009EF0ED /* Varela Round regular.ttf */; };
 		80412E9723CA07A70012CEEA /* VerifiedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80412E9623CA07A70012CEEA /* VerifiedTableViewController.m */; };
 		80412E9B23CA08400012CEEA /* EmailAddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 80412E9A23CA08400012CEEA /* EmailAddressCell.m */; };
+		804EBDD523D31BE400AC9965 /* EmailAddressMO.m in Sources */ = {isa = PBXBuildFile; fileRef = 804EBDD423D31BE300AC9965 /* EmailAddressMO.m */; };
 		8070075123D06EAE0068C8AE /* VisionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8070075023D06EAE0068C8AE /* VisionViewController.m */; };
 		8070075423D0FD610068C8AE /* PreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8070075323D0FD610068C8AE /* PreviewView.m */; };
 		80A4CEB223CB2E3000D8E1EB /* ValidatedEmailAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A4CEB123CB2E3000D8E1EB /* ValidatedEmailAddress.m */; };
 		80A4CEB523CB3E0000D8E1EB /* ValidatorAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A4CEB423CB3E0000D8E1EB /* ValidatorAPIClient.m */; };
-		80E1322723CE228100938893 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E1322623CE228100938893 /* Constants.m */; };
 		80E1323423CE42B600938893 /* Validator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80E1323223CE42B600938893 /* Validator.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -43,9 +43,8 @@
 		80412E9623CA07A70012CEEA /* VerifiedTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerifiedTableViewController.m; sourceTree = "<group>"; };
 		80412E9923CA08400012CEEA /* EmailAddressCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmailAddressCell.h; sourceTree = "<group>"; };
 		80412E9A23CA08400012CEEA /* EmailAddressCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmailAddressCell.m; sourceTree = "<group>"; };
-		804EBDCD23D30A1B00AC9965 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		804EBDCE23D30A6C00AC9965 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		804EBDCF23D30A6C00AC9965 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		804EBDD323D31BE300AC9965 /* EmailAddressMO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmailAddressMO.h; sourceTree = "<group>"; };
+		804EBDD423D31BE300AC9965 /* EmailAddressMO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmailAddressMO.m; sourceTree = "<group>"; };
 		8070074F23D06EAE0068C8AE /* VisionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VisionViewController.h; sourceTree = "<group>"; };
 		8070075023D06EAE0068C8AE /* VisionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VisionViewController.m; sourceTree = "<group>"; };
 		8070075223D0FD610068C8AE /* PreviewView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreviewView.h; sourceTree = "<group>"; };
@@ -54,8 +53,6 @@
 		80A4CEB123CB2E3000D8E1EB /* ValidatedEmailAddress.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ValidatedEmailAddress.m; sourceTree = "<group>"; };
 		80A4CEB323CB32F200D8E1EB /* ValidatorAPIClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ValidatorAPIClient.h; sourceTree = "<group>"; };
 		80A4CEB423CB3E0000D8E1EB /* ValidatorAPIClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ValidatorAPIClient.m; sourceTree = "<group>"; };
-		80E1322523CE201E00938893 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		80E1322623CE228100938893 /* Constants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		80E1323323CE42B600938893 /* Validator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Validator.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,8 +105,6 @@
 		8033028E23CA15DB009EF0ED /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				80E1322523CE201E00938893 /* Constants.h */,
-				80E1322623CE228100938893 /* Constants.m */,
 				80A4CEB323CB32F200D8E1EB /* ValidatorAPIClient.h */,
 				80A4CEB423CB3E0000D8E1EB /* ValidatorAPIClient.m */,
 			);
@@ -162,7 +157,7 @@
 			children = (
 				80A4CEB023CB2DF300D8E1EB /* ValidatedEmailAddress.h */,
 				80A4CEB123CB2E3000D8E1EB /* ValidatedEmailAddress.m */,
-				80E1323223CE42B600938893 /* Validator.xcdatamodeld */,
+				807B1C2823D366C000D93C0C /* Core Data */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -182,6 +177,16 @@
 				8033028C23CA1020009EF0ED /* Varela Round regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		807B1C2823D366C000D93C0C /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				804EBDD323D31BE300AC9965 /* EmailAddressMO.h */,
+				804EBDD423D31BE300AC9965 /* EmailAddressMO.m */,
+				80E1323223CE42B600938893 /* Validator.xcdatamodeld */,
+			);
+			path = "Core Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,7 +231,6 @@
 			knownRegions = (
 				en,
 				Base,
-				de,
 			);
 			mainGroup = 801A3F8623C8C8BB00847790;
 			productRefGroup = 801A3F9023C8C8BB00847790 /* Products */;
@@ -268,7 +272,7 @@
 				801A3F9723C8C8BB00847790 /* SceneDelegate.m in Sources */,
 				80A4CEB523CB3E0000D8E1EB /* ValidatorAPIClient.m in Sources */,
 				80412E9B23CA08400012CEEA /* EmailAddressCell.m in Sources */,
-				80E1322723CE228100938893 /* Constants.m in Sources */,
+				804EBDD523D31BE400AC9965 /* EmailAddressMO.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,8 +283,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				801A3F9C23C8C8BB00847790 /* Base */,
-				804EBDCD23D30A1B00AC9965 /* en */,
-				804EBDCF23D30A6C00AC9965 /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -289,7 +291,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				801A3FA123C8C8BF00847790 /* Base */,
-				804EBDCE23D30A6C00AC9965 /* de */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

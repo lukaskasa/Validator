@@ -10,16 +10,18 @@
 
 @implementation ValidatedEmailAddress
 
-- (instancetype) initWithEmail:(NSString *)emailAddress user:(NSString *)user domain:(NSString *)domain status:(NSString *)status reason:(NSString *)reason disposable:(BOOL)disposable; {
+- (instancetype) initWithStatus:(NSNumber *)status remainingRequests:(NSNumber *)remainingRequests emailAddress:(NSString *)emailAddress domain:(NSString *)domain didYouMean:(NSString *)didYouMean alias:(BOOL)alias mx:(BOOL)mx disposable:(BOOL)disposable {
     
     self =  [super init];
     
     if (self) {
-        _emailAddress = emailAddress;
-        _user = user;
-        _domain = domain;
         _status = status;
-        _reason = reason;
+        _emailAddress = emailAddress;
+        _domain = domain;
+        _didYouMean = didYouMean;
+        _remainingRequests = remainingRequests;
+        _alias = alias;
+        _mx = mx;
         _disposable = disposable;
     }
     
@@ -27,19 +29,22 @@
 }
 
 - (instancetype) initWithDictionary:(NSDictionary *)dictionary {
-    NSString * emailAddress = dictionary[@"email"];
-    NSString * user = dictionary[@"user"];
-    NSString * domain = dictionary[@"domain"];
-    NSString * status = dictionary[@"status"];
-    NSString * reason = dictionary[@"reason"];
-    
+    NSNumber *status = dictionary[@"status"];
+    NSNumber *remainingRequests = dictionary[@"remaining_requests"];
+    NSString *emailAddress = dictionary[@"email"];
+    NSString *domain = dictionary[@"domain"];
+    NSString *didYouMean = dictionary[@"did_you_mean"];
+    BOOL mx = [[dictionary objectForKey:@"mx"] integerValue] == 1 ? YES : NO;
     BOOL disposable = [[dictionary objectForKey:@"disposable"] integerValue]  == 1 ? YES : NO;
+    BOOL alias = [[dictionary objectForKey:@"alias"] integerValue] == 1 ? YES : NO;
     
-    return [self initWithEmail:emailAddress
-                          user:user
+    return [self initWithStatus:status
+              remainingRequests:remainingRequests
+                   emailAddress:emailAddress
                         domain:domain
-                        status:status
-                        reason:reason
+                        didYouMean:didYouMean
+                          alias:alias
+                             mx:mx
                     disposable:disposable
             ];
 }

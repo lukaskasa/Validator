@@ -15,12 +15,7 @@
 @interface VisionViewController ()
 
 @property (weak, nonatomic) IBOutlet PreviewView *previewView;
-@property (weak, nonatomic) IBOutlet UIView *cutoutView;
-@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 
-@property (nonatomic) CGRect regionOfInterest;
-
-@property (nonatomic) UIDeviceOrientation currentOrientation;
 @property (nonatomic) CGImagePropertyOrientation textOrientation;
 
 @property (nonatomic) AVCaptureSession * captureSession;
@@ -31,15 +26,6 @@
 
 @property (nonatomic) dispatch_queue_t sessionCaptureQueue;
 @property (nonatomic) dispatch_queue_t videoDataOutputQueue;
-
-@property (nonatomic) NSMutableArray *boxLayer;
-
-@property (nonatomic) CGAffineTransform uiRotationTransform;
-@property (nonatomic) CGAffineTransform bottomToTopTransform;
-@property (nonatomic) CGAffineTransform roiToGlobalTransform;
-@property (nonatomic) CGAffineTransform visionToAVFTransform;
-
-
 
 -(void) recognizeTextHandler;
 
@@ -53,10 +39,6 @@
     self = [super initWithCoder:coder];
     if (self) {
         _request = [[VNRecognizeTextRequest alloc] init];
-        _maskLayer = [[CAShapeLayer alloc] init];
-        _textOrientation = kCGImagePropertyOrientationUp;
-        _currentOrientation = UIDeviceOrientationPortrait;
-        
     }
     return self;
 }
@@ -64,65 +46,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSLog(@"%@", self.resultReceiverDelegate);
-
-
-    self.regionOfInterest = CGRectMake(0, 0, 1, 1);
     self.textOrientation = kCGImagePropertyOrientationUp;
-    
     self.resultEmailAddress = [[NSString alloc] init];
-    
-    [self recognizeTextHandler];
-    
-    self.uiRotationTransform = CGAffineTransformIdentity;
-    self.bottomToTopTransform = CGAffineTransformTranslate(CGAffineTransformMakeScale(1, -1), 0, 1);
-    self.roiToGlobalTransform = CGAffineTransformIdentity;
-    self.visionToAVFTransform = CGAffineTransformIdentity;
-    
     self.captureSession = [[AVCaptureSession alloc] init];
     self.videoDataOutput = [[AVCaptureVideoDataOutput alloc] init];
-    
     self.previewView.sesssion = self.captureSession;
-    
-    UIColor *brandColor = [[UIColor alloc] initWithHue:170 / 100 saturation:64 / 100 brightness:69 / 100 alpha:0.5];
-    
-    self.cutoutView.backgroundColor = brandColor;
-    
-    self.maskLayer.backgroundColor = UIColor.clearColor.CGColor;
-    self.maskLayer.fillRule = kCAFillRuleEvenOdd;
-    
-    self.cutoutView.layer.mask = self.maskLayer;
+    [self recognizeTextHandler];
     
     self.sessionCaptureQueue = dispatch_queue_create("SessionCaptureQueue", DISPATCH_QUEUE_SERIAL);
     self.videoDataOutputQueue = dispatch_queue_create("VideoDataOutputQueue", DISPATCH_QUEUE_SERIAL);
     
     dispatch_async(self.sessionCaptureQueue, ^{
-        
         [self setupCamera];
-
     });
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    NSLog(@"RESULT: %@", self.resultEmailAddress);
-
-    NSLog(@"View Will Dissapear");
-    NSLog(@"RESULT: %@", self.resultEmailAddress);
     [self.resultReceiverDelegate passResult:self.resultEmailAddress];
     [self.captureSession stopRunning];
-}
-
-- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
-    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
-
-    self.currentOrientation = UIDevice.currentDevice.orientation;
-    
-    AVCaptureConnection *videoPreviewLayerConnection = self.previewView.videoPreviewLayer.connection;
-    
-    AVCaptureVideoOrientation newVideoOrientation = self.currentOrientation == UIDeviceOrientationPortrait ? AVCaptureVideoOrientationPortrait : AVCaptureVideoOrientationLandscapeLeft;
-    
-    videoPreviewLayerConnection.videoOrientation = newVideoOrientation;
 }
 
 - (void)viewDidLayoutSubviews {
@@ -137,7 +79,6 @@
         
         self.request.recognitionLevel = VNRequestTextRecognitionLevelAccurate;
         self.request.usesLanguageCorrection = NO;
-        //self.request.regionOfInterest = self.regionOfInterest;
         
         VNImageRequestHandler * requestHandler = [[VNImageRequestHandler alloc] initWithCVPixelBuffer:pixelBuffer orientation:kCGImagePropertyOrientationRight  options:@{}];
         
@@ -152,11 +93,7 @@
 }
 
 - (void)recognizeTextHandler {
-    
-    //NSMutableArray * characters = [[NSArray alloc] init];
-    //NSMutableArray * redBoxes = [[NSArray alloc] init];
-    //NSMutableArray * greenBoxes = [[NSArray alloc] init];
-    
+
     self.request = [[VNRecognizeTextRequest alloc] initWithCompletionHandler:^(VNRequest * _Nonnull request, NSError * _Nullable error) {
         
         int maximumCandidates = 1;
@@ -174,8 +111,6 @@
                     VNRecognizedText *candidate = [textObservation topCandidates:maximumCandidates].firstObject;
                     
                     NSString *result = [self extractEmailAddressFrom:candidate.string];
-                    
-                    NSLog(@"%@", result);
                     
                     if (result.length > 5) {
                         dispatch_async(dispatch_get_main_queue(), ^{
@@ -242,6 +177,7 @@
     [self.captureSession startRunning];
 }
 
+/// Extract email from the visible text using a regular expression.
 - (NSString *) extractEmailAddressFrom:(NSString *)string {
     
     NSMutableString *emailAddress = [[NSMutableString alloc] init];

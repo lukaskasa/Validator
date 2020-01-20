@@ -26,15 +26,16 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ogq-7Q-lGa">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="example@company.com" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Ta-YR-T1n">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" placeholder="example@company.com" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1Ta-YR-T1n">
                                                 <rect key="frame" x="0.0" y="0.0" width="314" height="50"/>
                                                 <color key="backgroundColor" red="0.074509803920000006" green="0.08235294118" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="tintColor" red="0.49019607840000001" green="0.89019607840000003" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="n1F-gb-QjB"/>
                                                 </constraints>
                                                 <color key="textColor" red="0.49019607840000001" green="0.89019607840000003" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" textContentType="email"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="email"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7hH-Cp-AO6">
                                                 <rect key="frame" x="324" y="0.0" width="50" height="50"/>
@@ -79,7 +80,6 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter an address to be validated:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3rz-km-77t">
                                 <rect key="frame" x="20" y="20" width="374" height="20.5"/>
                                 <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="17"/>
-                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="kXL-iy-C66">
@@ -130,7 +130,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.98039215686274506" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="x8Z-cl-hoR" secondAttribute="trailing" constant="20" id="6Iz-k5-BzT"/>
                             <constraint firstItem="3rz-km-77t" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="H2d-cc-oTM"/>
@@ -196,12 +196,13 @@
         <scene sceneID="qPl-U2-DLd">
             <objects>
                 <tableViewController id="DTT-AO-1cO" customClass="VerifiedTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="75Q-pk-t7a">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="75Q-pk-t7a">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="emailAddressCell" rowHeight="70" id="xhw-QJ-yT1" customClass="EmailAddressCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EmailAddressCell" rowHeight="70" id="xhw-QJ-yT1" customClass="EmailAddressCell">
                                 <rect key="frame" x="0.0" y="28" width="414" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xhw-QJ-yT1" id="gdv-AH-0M2">
@@ -229,8 +230,9 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="hGV-2F-Tzr">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-cross" translatesAutoresizingMaskIntoConstraints="NO" id="hGV-2F-Tzr">
                                                                     <rect key="frame" x="59.5" y="0.0" width="25" height="10"/>
+                                                                    <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="10" id="yK1-KF-HhI"/>
                                                                     </constraints>
@@ -248,6 +250,7 @@
                                                                 </label>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="bAG-VE-xsV">
                                                                     <rect key="frame" x="20.5" y="0.0" width="25" height="10"/>
+                                                                    <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="10" id="ADy-2B-gRC"/>
                                                                     </constraints>
@@ -263,8 +266,9 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="MUJ-ly-uLd">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-cross" translatesAutoresizingMaskIntoConstraints="NO" id="MUJ-ly-uLd">
                                                                     <rect key="frame" x="27.5" y="0.0" width="25" height="10"/>
+                                                                    <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="10" id="aJE-qC-nxx"/>
                                                                     </constraints>
@@ -282,6 +286,12 @@
                                         <constraint firstAttribute="trailing" secondItem="TRF-hv-Bvs" secondAttribute="trailing" constant="20" id="oac-ue-xEe"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="aliasCheckImageView" destination="MUJ-ly-uLd" id="kvY-U0-6ro"/>
+                                    <outlet property="disposableCheckImageView" destination="hGV-2F-Tzr" id="X5z-AN-d5U"/>
+                                    <outlet property="emailAddress" destination="q0A-kO-Juf" id="sAE-nl-kmU"/>
+                                    <outlet property="mxCheckImageView" destination="bAG-VE-xsV" id="6J6-mL-uYW"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -374,6 +384,7 @@
     <resources>
         <image name="icon-check" width="48" height="32"/>
         <image name="icon-checkmark" width="25" height="25"/>
+        <image name="icon-cross" width="25" height="25"/>
         <image name="icon-list" width="48" height="32"/>
         <image name="scan" width="21" height="28"/>
     </resources>

@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface EmailAddressCell : UITableViewCell
+
+@property (weak, nonatomic) IBOutlet UILabel *emailAddress;
+@property (weak, nonatomic) IBOutlet UIImageView *disposableCheckImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *mxCheckImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *aliasCheckImageView;
 
 @end
 
-NS_ASSUME_NONNULL_END

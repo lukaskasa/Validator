@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
-NS_ASSUME_NONNULL_BEGIN
+@interface VerifiedTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate>
 
-@interface VerifiedTableViewController : UITableViewController
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
 @end
 
-NS_ASSUME_NONNULL_END

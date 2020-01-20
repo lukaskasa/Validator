@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
+// Properties
+@property (nonatomic, strong) NSPersistentContainer *persistentContainer;
+
+// Methods
+- (void) saveContext;
 
 @end
 

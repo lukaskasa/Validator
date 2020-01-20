@@ -24,6 +24,11 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *messageTextLabel;
 
+// Core Data
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, weak) AppDelegate *delegate;
+
+
 @end
 
 @implementation CheckViewController
@@ -33,95 +38,104 @@
     self = [super initWithCoder:coder];
     if (self) {
         _validatorApiClient = [[ValidatorAPIClient alloc] init];
+        _delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        _managedObjectContext = self.delegate.persistentContainer.viewContext;
     }
     return self;
 }
+
+#pragma mark View Life Cycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Setup
     [self setUpUI];
-    
-    //self.emailAddressTextfield.text = @"Enter an email address...";
 }
+
+#pragma mark Actions
 
 - (IBAction)validateEmailAddress:(UIButton *)sender {
     
-    NSLog(@"Validating E-mail Addresses...");
-    NSLog(@"E-Mail Address: %@", self.emailAddressTextfield.text);
-     
-    // 1. Call to Validating API endpoint https://www.validator.pizza
+    // 1. Call to endpoint https://www.validator.pizza/email
     
-    NSString *textFieldText = self.emailAddressTextfield.text;
+    NSError *regexError = nil;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"([a-zA-Z0-9_\\-\\.]+@)([a-zA-Z0-9_\\-\\.]+\\.)([a-zA-Z]{2,5})" options:NSRegularExpressionCaseInsensitive error:&regexError];
+    NSTextCheckingResult *match = [regex firstMatchInString:self.emailAddressTextfield.text options:0 range: NSMakeRange(0, [self.emailAddressTextfield.text length])];
     
-    [self.validatorApiClient validateEmailAddress:textFieldText completion:^(NSError *error) {
+    if (match) {
         
-        if (error) {
-            NSLog(@"Error");
-            return;
-        }
-        
-        NSString *address = self.validatorApiClient.validatedEmailAddress.emailAddress;
-        NSString *user = self.validatorApiClient.validatedEmailAddress.user;
-        NSString *domain = self.validatorApiClient.validatedEmailAddress.domain;
-        NSString *status = self.validatorApiClient.validatedEmailAddress.status;
-        NSString *reason = self.validatorApiClient.validatedEmailAddress.reason;
-        //BOOL mx = self.validatorApiClient.validatedEmailAddress.mx;
-        BOOL disposable = self.validatorApiClient.validatedEmailAddress.disposable;
-        //BOOL alias = self.validatorApiClient.validatedEmailAddress.alias;
-        
-//
-//        if (statusCode != 200) {
-//
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//                [self showAlertWith:@"This is not a valid email address!"];
-//                [self setUpUI];
-//            });
-//
-//            return;
-//        }
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self setImageViews: self.validatorApiClient.validatedEmailAddress];
-        });
-        
-        NSLog(@"E-mail Address: %@", address);
-        NSLog(@"User: %@", user);
-        NSLog(@"Domain: %@", domain);
-        NSLog(@"Status code: %@", status);
-        NSLog(@"Domain: %@", reason);
-        NSLog(@"Disposable: %s", disposable ? "true" : "false");
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.view endEditing:YES];
-        });
-        
-    }];
-    
-    // 2. Save to CoreData
-    
-}
-
-- (IBAction)scanForEmailAddress:(UIButton *)sender {
-    
-    // Initialize capture sesssion
-    
-    [self performSegueWithIdentifier:@"showVisionViewController" sender:sender];
-    
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    if ([[segue identifier] isEqualToString:@"showVisionViewController"]) {
-        VisionViewController * visionViewController = [segue destinationViewController];
-        visionViewController.resultReceiverDelegate = self;
+        [self.validatorApiClient validateEmailAddress:self.emailAddressTextfield.text completion:^(NSError *error) {
+            
+            if (error) {
+                NSLog(@"Error");
+                return;
+            }
+            
+            NSNumber *remainingRequests = self.validatorApiClient.validatedEmailAddress.remainingRequests;
+            
+            [[NSUserDefaults standardUserDefaults] setObject:remainingRequests forKey:@"remainingRequests"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                if (error) {
+                    [self showAlertWithTitle: @"Error" message:[error localizedDescription]];
+                } else {
+                    [self setImageViews: self.validatorApiClient.validatedEmailAddress];
+                    
+                    if ([[[NSUserDefaults standardUserDefaults] stringForKey:@"remainingRequests"] integerValue] == 10) {
+                        [self showAlertWithTitle: @"Info" message:[NSString stringWithFormat:@"You have %@ checks remaining!", [[NSUserDefaults standardUserDefaults] stringForKey:@"remainingRequests"]]];
+                    }
+                }
+                
+            });
+            
+            // 2. Save to CoreData
+            
+            if (error == NULL) {
+                [self saveEmailAddress:self.validatorApiClient.validatedEmailAddress];
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.view endEditing:YES];
+            });
+            
+        }];
+    } else {
+        [self showAlertWithTitle: @"Validator" message:@"Please enter an E-mail address."];
     }
     
 }
 
+- (IBAction)scanForEmailAddress:(UIButton *)sender {
+    [self performSegueWithIdentifier:@"showVisionViewController" sender:sender];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"showVisionViewController"]) {
+        VisionViewController * visionViewController = [segue destinationViewController];
+        visionViewController.resultReceiverDelegate = self;
+    }
+}
+
+#pragma mark Helper methods
+
 - (void) passResult:(NSString *)result {
     [self.emailAddressTextfield setText:result];
 }
+
+- (void) saveEmailAddress:(ValidatedEmailAddress *)address {
+    EmailAddressMO *newAddress = [[EmailAddressMO alloc] initWithContext:self.managedObjectContext];
+    
+    newAddress.address = address.emailAddress;
+    newAddress.isDisposable = address.disposable;
+    newAddress.isMx = address.mx;
+    newAddress.isAlias = address.alias;
+    
+    NSError *error = nil;
+    if (![self.managedObjectContext save:&error]) {
+        NSLog(@"An error occured: %@", error);
+    }}
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES];
@@ -133,43 +147,52 @@
     UIImage * crossImage = [[UIImage imageNamed:@"icon-cross"] init];
     
     [self.disposableLabel setHidden:NO];
-    //[self.mxLabel setHidden:NO];
-    //[self.aliasLabel setHidden:NO];
+    [self.mxLabel setHidden:NO];
+    [self.aliasLabel setHidden:NO];
+    
+    NSString *messageIfInvalid = @"This E-mail address is invalid."; // !mx && !disposable && !alias
+    NSString *messageIfValid = @"This E-mail address is not disposable and probably exists!"; // !disposable && mx && !alias
+    NSString *messageIfDisposable = @"This E-mail address is disposable!"; // dsposable
+    NSString *messageIfAlias = @"This E-mail address is an alias."; // alias
+    
+    if (validatedAddress.disposable) {
+        self.messageTextLabel.text = messageIfDisposable;
+    } else if (validatedAddress.alias) {
+        self.messageTextLabel.text = messageIfAlias;
+    } else if (!validatedAddress.disposable && !validatedAddress.mx && !validatedAddress.alias) {
+        self.messageTextLabel.text = messageIfInvalid;
+    } else if (!validatedAddress.disposable && validatedAddress.mx && !validatedAddress.alias) {
+        self.messageTextLabel.text = messageIfValid;
+    }
+    
+    [self.messageTextLabel setHidden:NO];
     
     self.disposableImageView.image = validatedAddress.disposable ? checkImage : crossImage;
-    //self.mxImageView.image = validatedAddress.mx ? checkImage : crossImage;
-    //self.aliasImageView.image = validatedAddress.alias ? checkImage : crossImage;
-    
+    self.mxImageView.image = validatedAddress.mx ? checkImage : crossImage;
+    self.aliasImageView.image = validatedAddress.alias ? checkImage : crossImage;
 }
 
 -(void)setUpUI {
     [self.disposableLabel setHidden:YES];
     [self.mxLabel setHidden:YES];
     [self.aliasLabel setHidden:YES];
+    [self.messageTextLabel  setHidden:YES];
     
     self.disposableImageView.image = [[UIImage alloc] init];
     self.mxImageView.image = [[UIImage alloc] init];
     self.aliasImageView.image = [[UIImage alloc] init];
-    
-    self.messageTextLabel.text = @"";
 }
 
--(void)showAlertWith:(NSString *)message {
+/// Create and present a simple alert with a specified title and message
+-(void)showAlertWithTitle:(NSString *)title message:(NSString *)message {
     
-    // 1. Create UIAlertController
-    
-    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:message preferredStyle:UIAlertControllerStyleAlert];
-    
-    // 2. Create and add a default action to dismiss alert
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction * defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
-    
     [alert addAction:defaultAction];
     
-    // 3. Present the Alert
-    
     [self presentViewController:alert animated:YES completion:nil];
-    
 }
+
 
 @end
